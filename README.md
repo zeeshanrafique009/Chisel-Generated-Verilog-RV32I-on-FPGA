@@ -4,4 +4,4 @@ Here is the Fibonacci Series running on FPGA Arty-7 xc7a35ticsg324-1L. On FPGA b
 
 ![alt txt](https://github.com/zeeshanrafique009/Chisel-Single-Cycle-RISC-V/blob/master/description.PNG)
 
-You can watch the [video](https://www.google.com) on our youtube channel
+You can watch the [video](https://www.youtube.com/watch?v=6RJ4npCnwvA) on our youtube channel
