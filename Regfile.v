@@ -198,7 +198,11 @@ module Regfile(
   assign _T_2 = io_rd == 5'h0; // @[Regfile.scala 21:28]
   assign io_rs1 = 5'h1f == io_rs1_s ? $signed(register_31) : $signed(_GEN_30); // @[Regfile.scala 18:16]
   assign io_rs2 = 5'h1f == io_rs2_s ? $signed(register_31) : $signed(_GEN_62); // @[Regfile.scala 19:16]
-  assign io_regout = register_7; // @[Regfile.scala 27:19]
+
+////////////////////////////////////////////////////////////  
+  assign io_regout = register_7;//                        /
+////////////////////////////////////////////////////////////
+
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif

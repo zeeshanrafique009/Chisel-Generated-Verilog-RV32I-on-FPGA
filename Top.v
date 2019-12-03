@@ -1,11 +1,15 @@
 module Top(
   input         clock_in,
   input         reset,
-  output  [31:0] io_reg
+  output led1a,led1b,led1c,led1d,led1e,led1f,led1g,
+         led2a,led2b,led2c,led2d,led2e,led2f,led2g,
+         led3a,led3b,led3c,led3d,led3e,led3f,led3g,
+  output c_clock
 );
-reg [31:0] test ;
-wire clock;
-
+  wire [31:0] io_reg;
+  wire [31:0]test;
+  wire clock;
+  assign c_clock=clock;
   wire  i_mem_clock; // @[Top.scala 10:25]
   wire [9:0] i_mem_io_address; // @[Top.scala 10:25]
   wire [31:0] i_mem_io_instruction; // @[Top.scala 10:25]
@@ -86,16 +90,48 @@ wire clock;
   wire [31:0] _GEN_8; // @[Top.scala 102:48]
   wire [31:0] _GEN_9; // @[Top.scala 99:48]
   
-  /*  //for testing purpose, output test
-  
-   always @ (posedge clock)begin
-     if (control_io_opcode == 5'b11011)begin
-          test <= immGen_io_ujImm_out;
-     end
-  end
-  */
-  
-  
+//   for testing purpose, output test
+//  reg [15:0]a=16'h0005;  //5
+//  reg [15:0]b=16'hffff;   //-1
+//  reg [15:0]t;
+////  wire [15:0]test;
+//   always @ (posedge clock)begin
+////     if (control_io_opcode == 5'b11011)begin
+////          test <= pc_io_out;
+////     end
+//    t<=a+b;
+//  end
+//  assign test=32'd0;  //d17476;
+
+ segmentTop seg4(
+      .clock(clock),      //  1,2,3,5,8,d,15,22,37,59,90,E9,179,262,3dB,63d
+      .reset(reset),
+      .fibo(io_reg),
+      .led1a(led1a),
+      .led1b(led1b),
+      .led1c(led1c),
+      .led1d(led1d),
+      .led1e(led1e),
+      .led1f(led1f),
+      .led1g(led1g),
+      
+      .led2a(led2a),
+      .led2b(led2b),
+      .led2c(led2c),
+      .led2d(led2d),
+      .led2e(led2e),
+      .led2f(led2f),
+      .led2g(led2g),
+      
+      .led3a(led3a),
+      .led3b(led3b),
+      .led3c(led3c),
+      .led3d(led3d),
+      .led3e(led3e),
+      .led3f(led3f),
+      .led3g(led3g)   
+   );
+ 
   clock_wizard wiz1(
       .clock_in(clock_in),
       .clock(clock)      

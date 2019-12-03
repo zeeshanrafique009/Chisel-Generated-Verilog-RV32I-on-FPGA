@@ -82,6 +82,6 @@ module ImmGen(
   assign _GEN_1 = _T_30[31:0]; // @[ImmGen.scala 24:18]
   assign io_uImm_out = $signed(_GEN_1); // @[ImmGen.scala 24:18]
   assign io_sImm_out = {_T_33,s_imm}; // @[ImmGen.scala 25:18]
-  assign io_sbImm_out = (io_pc + _T_38)-32'd4; // @[ImmGen.scala 26:18]
-  assign io_ujImm_out = (io_pc + _T_44)-32'd4; // @[ImmGen.scala 27:18]
+  assign io_sbImm_out = io_pc + _T_38; // @[ImmGen.scala 26:18]
+  assign io_ujImm_out = io_pc + _T_44; // @[ImmGen.scala 27:18]
 endmodule
